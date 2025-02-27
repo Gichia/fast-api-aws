@@ -43,7 +43,7 @@ jobs:
 
       # Step 6: Add APP Files To The Created Archive
       - name: Add APP Files To The Created Archive
-        run: zip -g ../api.zip -r main.py
+        run: cd ./api && zip -g ../api.zip -r .
 
       # Step 7: Upload Zip File Artifact
       - name: Upload Zip File Artifact
