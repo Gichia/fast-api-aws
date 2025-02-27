@@ -60,13 +60,13 @@ jobs:
     steps:
       # Step 1: Install AWS CLI
       - name: Install AWS CLI
-        uses: unfor19/install-aws-cli-action@v1
+        uses: aws-actions/configure-aws-credentials@v2
+        # with:
+        #   version: 1
         with:
-          version: 1
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
 
       # Step 2: Download The APP Artifact
       - name: Download The APP Artifact
